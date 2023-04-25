@@ -16,3 +16,6 @@ canvas{
 h1{
     background-color: rgba(152, 251, 152, 0.452);
 }
+#h2u{
+    visibility: collapse;
+}

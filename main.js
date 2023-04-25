@@ -1,10 +1,20 @@
-console.log("The ohHellos");
+console.log("Js loaded");
+var visible = false;
 var alarm = "";
 var objects = [];
 console.log("alarm defined");
 function preload(){
     alarm = loadSound("love_special_rhtdm.mp3");
     console.log("sound loaded");
+}
+function h2u(){
+    if (visible == false) {
+        document.getElementById("h2u").style.visibility = "visible";
+        visible = true;
+    } else if(visible == true) {
+        visible = false;
+        document.getElementById("h2u").style.visibility = "collapse";
+    }
 }
 function setup(){
     canvas = createCanvas(500, 500);
@@ -16,7 +26,7 @@ function setup(){
     objectDetector = ml5.objectDetector("cocossd", modelLoaded);
 }
 function draw(){
-    image(viddo, 500, 500);
+    image(video, 500, 500);
     for (let i = 0; i < objects.length; i++) {
         if(objects[0].label == "person"){
             document.getElementById("status").innerHTML = "The baby has been detected.";
